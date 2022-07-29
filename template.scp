@@ -10,7 +10,7 @@ func SCR_TEMPLATE_AUTO_ATTACK(from, self, adddam, arg)
         return false, 0, 0, 0, 0;
     }
 
-    if (from.Job == {placeholder})
+    if (from.Job != {placeholder})
     {
         return false, 0, 0, 0, 0;
     }
@@ -25,7 +25,7 @@ func SCR_TEMPLATE_SKILL_ATTACK(from, self, adddam, arg)
         return false, 0, 0, 0, 0;
     }
 
-    if (from.Job == {placeholder})
+    if (from.Job != {placeholder})
     {
         return false, 0, 0, 0, 0;
     }
