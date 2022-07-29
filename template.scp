@@ -1,0 +1,34 @@
+// from is a PC character that is being calculate in REPVE environment
+// self is a target that is being attacking by from
+// adddam is basic adddam from base script
+// arg is a skill / attack object
+// the function must return (success: bool, bonus damage: number, critical chance: number, ignore def/ref: number, additional true damage: number)
+func SCR_TEMPLATE_AUTO_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job == {placeholder})
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    return true, 0, 0, 0, 0;
+}
+
+func SCR_TEMPLATE_SKILL_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job == {placeholder})
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    return true, 0, 0, 0, 0;
+}
