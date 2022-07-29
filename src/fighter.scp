@@ -1,0 +1,46 @@
+// from is a PC character that is being calculate in REPVE environment
+// self is a target that is being attacking by from
+// adddam is basic adddam from base script
+// arg is a skill / attack object
+// the function must return (success: bool, bonus damage: number, critical chance: number, ignore def/ref: number, additional true damage: number)
+func SCR_Fighter_AUTO_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job != 1)
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    // Get extra str for attacker
+    var str = GET_EXTRA_STR(from);
+
+    // Scaling bonus for 2% of extra STR
+    var bonusDamage = str * 0.02;
+
+    return true, bonusDamage, 0, 0, 0;
+}
+
+func SCR_Fighter_SKILL_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job != 1)
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    // Get extra str for attacker
+    var str = GET_EXTRA_STR(from);
+
+    // Scaling bonus for 2% of extra STR
+    var bonusDamage = str * 0.02;
+
+    return true, bonusDamage, 0, 0, 0;
+}
