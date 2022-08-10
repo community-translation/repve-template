@@ -1,0 +1,42 @@
+func CODE_NAME_T_AUTO_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job != 1)
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    // Get extra str for attacker
+    var str = GET_EXTRA_STR(from);
+    var dex = GET_EXTRA_DEX(from);
+
+    // Scaling bonus for 2% of extra STR
+    var bonusDamage = str * 0.02;
+
+    return true, bonusDamage, 0, 0, 0;
+}
+
+func SCR_Fighter_SKILL_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job != 1)
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    // Get extra str for attacker
+    var str = GET_EXTRA_STR(from);
+
+    // Scaling bonus for 2% of extra STR
+    var bonusDamage = str * 0.02;
+
+    return true, bonusDamage, 0, 0, 0;
+}
