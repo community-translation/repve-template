@@ -1,0 +1,54 @@
+func CODE_NAME_T_AUTO_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job != 288)
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    // Get extra str and dex for attacker and mix them by using exponent
+    // As CNT is a ranged character that use both str and dex. It is more reasonable to add up both value then using the higher one.
+    var str = GET_EXTRA_STR(from);
+    var dex = GET_EXTRA_DEX(from);
+    
+    var mix = Math.floor(((str^2) + (dex^2))^0.5);
+
+    // Scaling bonus for 2% of extra mixed value
+    var bonusDamage = mix * 0.02;
+
+    return true, bonusDamage, 0, 0, 0;
+}
+
+func CODE_NAME_T_SKILL_ATTACK(from, self, adddam, arg)
+{
+    if (self.ClassName == 'PC'  from.ClassName != 'PC')
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    if (from.Job != 288)
+    {
+        return false, 0, 0, 0, 0;
+    }
+
+    // Get extra str and dex for attacker and mix them by using exponent
+    // As CNT is a ranged character that use both str and dex. It is more reasonable to add up both value then using the higher one.
+    var str = GET_EXTRA_STR(from);
+    var dex = GET_EXTRA_DEX(from);
+    
+    var mix = Math.floor(((str^2) + (dex^2))^0.5);
+
+    // Scaling bonus for 2% of extra mixed value
+    var bonusDamage = mix * 0.02;
+
+    return true, bonusDamage, 0, 0, 0;
+}
+
+
+// Porposal on more repve of CNT
+// When full stack of Delight of Vengeance(Level 50 now), auto attack renew the duration of Activation (Phase 4 of Melting Darkness). This will make him more potential on afk.
+// As he is in the GM Stone Series, he should be more outstanding then other characters. However he is not in the meta now and he deserve some love as his swim suit just come out.Hope this buff can make him appear in game but not just statue in barrack .
